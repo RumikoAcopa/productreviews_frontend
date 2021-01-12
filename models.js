@@ -30,6 +30,7 @@ class Product {
             this.container().append(...renderedLists);
             return this.collection
         })
+    }
 
         static create(formData) {
             return fetch("http://localhost:3000/products", {
@@ -59,7 +60,8 @@ class Product {
         //productList.render will create an li element and assign it to this.element
             //allows us to update li w/o having to 
             //<li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Toner.jpg/:/rs=w:1200,h:1200" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
-        .render() {
+            
+        render() {
             this.element ||= document.createElement(li)
             this.element.classList.add(...'mr-2 text-center.split') 
 
@@ -90,7 +92,52 @@ class Review {
     }
 
     static all() {
+        return fetch("http://localhost:3000/products", {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        })
 
+        .then(res => {
+            if(res.ok) {
+                return res.json() //rtns a promise 4 body content parsed as JSON
+            } else {  //else,rtn a reject promise so skip following then & go 2 catch
+                return res.text().then(error => Promise.reject(error))
+            }
+        })
+
+        .then(reviewArray => {
+            this.collection = reviewArray.map(attrs => new Review(attrs))
+            let renderedLists = this.collection.map(reviewList => reviewList.render())
+            this.container().append(...renderedLists);
+            return this.collection
+        })
+    }
+
+    static create(formData) {
+        return fetch("http://localhost:3000/products", {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({review: formData})
+        })
+        .then(res => {
+            if(res.ok) {
+                return res.json() //rtns a promise 4 body content parsedas JSON
+            } else {  //else,rtn a reject promise so skip following then &go 2 catch
+                return res.text().then(error => Promise.reject(error))
+            }
+        })
+        .then(reviewAttributes => {
+            let review = new Review(reviewAttributes);
+            this.collection.push(review);
+            this.container.appendChild(review.render())
+            return review;
+
+        });
     }
 
     
