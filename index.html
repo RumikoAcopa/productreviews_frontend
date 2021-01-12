@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
     
-
 <body>
     <!-- header ==============================  -->
 <div class="bg-white-700 p-4 flex justify-between items-center">
@@ -32,39 +30,13 @@
     <div class="md:w-1/2 mb-10 md:mb-0">
       <h2 class="text-2xl md:text-4xl lg:text-6xl text-white mb-6">Welcome to <br> Kiss Of Beauty Skincare!</h2>
       <p class="mb-6">Fresh Skin & Beauty Products that care! </p>
-      <!--<a href="#" class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 hover:bg-gray-300 rounded mr-2">Learn More</a>-->
+
       <a href="#section1" class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 hover:bg-gray-300 rounded" id="review-button">Write A Review</a>
       
     </div>
 
     <script src="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"></script>
-    <script>
-      
-    /*$(document).ready(function(){
-      // Add smooth scrolling to all links
-      $("a").on('click', function(event) {
     
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-    
-          // Store hash
-          //let hash = this.hash;
-    
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function(){
-       
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-    });*/
-    </script>
     <style>
       html {
         scroll-behavior: smooth;
@@ -78,6 +50,34 @@
 
     <!-- right -->
   </div>
+  <!--Modal Bootstrap-->
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit Review</button>
+        <button type="button" class="btn btn-primary">Delete Review</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- features ============================== -->
 
 
@@ -339,15 +339,29 @@
   <!-- footer + newsletter ============================== -->
   <div class="p-10 bg-gray-900 text-gray-400 flex justify-between">
     <!--   left -->
-    <div class="md:w-1/2">
-      <h3 class="text-lg mb-2">Select Product From Drop Down</h3>
-      <form class="flex flex-wrap">
-        <input type="email" class="w-full rounded-l py-3 px-4 outline-none focus:bg-indigo-200">
+    <div class="md:w-1/2 text-black">
 
-        <h3 class="w-full ml-8 mt-8 text-grey-darker font-bold" id= "review">  Write A Review</h3>
-        <textarea class="appearance-none block h-64 w-2/3 bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 ml-8 mt-8" name="review" id="" type="text"></textarea>       
+      <input list= "product-review-list" type= "text" >
+      <datalist id= "product-review-list">
+        <option value="Lavish Blossom Cleanser"></option>
+        <option value="Lavish Blossom Toner"></option>
+        <option value="Alp-Rose Nano Serum"></option>
+        <option value="Lavish Peptide Creme"></option>
+        <option value="Creamy Luffa Exfoliant"></option>
+        <option value="Green Tea Cleanser"></option>
+        <option value="Kaolin Cleanse"></option>
+        <option value="Halo Eye Serum"></option>
+        <option value="Azi-Clear Serum"></option>
+        <option value="Azi Clarifying Creme"></option>
+      </datalist>
+
+      <form class="flex flex-wrap">
+        <!--<input type="email" class="w-full rounded-l py-3 px-4 outline-none focus:bg-indigo-200">-->
+        <h3 class="w-full ml-8 mt-8 text-white font-bold" id= "review">  Write A Review</h3>
+       
+        <textarea class="appearance-none block h-64 w-2/3 bg-grey-lighter text-grey-darker border border-grey-darker rounded py-3 px-4 mb-3 ml-8 mt-8" name="review" id="" type="text"></textarea>       
       </form>
-      <button class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 hover:bg-gray-300 rounded">Submit</button>
+      <button class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 hover:bg-gray-300 rounded" id= "submit_review">Submit</button>
       <section id = "section1"></section>
     </div>
     <!--   right -->
@@ -360,83 +374,3 @@
  <script type="text/javascript" src="listeners.js"></script>
 </body>
 </html>
-
-
-
-
-<!-- The Modal -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal"     data-target="#exampleModalLong">
-      Launch demo modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</    button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-<!--2nd Modal Option-->
-<img id="myImg" src="img01.jpg" alt="XGP Tele Bodies" width="600" height="200">
-
-<div id="myModal" class="modal">
-<span class="close">&times;</span>
-<img class="modal-content" id="img01">
-<div id="caption"></div>
-</div>
-
-<img id="myImg2" src="img02.jpg" alt="Xaviere Guitars" width="600" height="200">
-
-<img id="myImg3" src="img03.jpg" alt="Premium Guitar Cases" width="600" height="200">
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var img2 = document.getElementById('myImg2');
-var img3 = document.getElementById('myImg3');
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-//handle click for myImg2
-img2.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-//handle click for myImg3
-img3.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
