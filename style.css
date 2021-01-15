@@ -41,3 +41,9 @@
 textarea {
   color: rgb(2, 2, 2);
 }
+
+form {
+  position: fixed;
+  bottom: 0;
+  }
+
