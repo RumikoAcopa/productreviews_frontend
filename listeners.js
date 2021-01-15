@@ -1,6 +1,6 @@
-/*document.addEventListener('DOMContentLoaded', function(e) {
+document.addEventListener('DOMContentLoaded', function(e) {
     Product.all();
-});*/
+});
 
 document.addEventListener('click', function(e) {
     console.dir(e.target)
@@ -28,4 +28,17 @@ element.addEventListener('click', function(e) {
    // document.getElementById("review").scrollIntoView(true)
 //
 });
+
+
+// let element = document.getElementById("submit_review_form").onsubmit = function() //{myFunction()};
+//    function myFunction() {
+//  alert("The form was submitted");
+//}
+
+// let myModal = document.getElementById('myModal')
+// let myInput = document.getElementById('myInput')
+
+// myModal.addEventListener('shown.bs.modal', function () {
+//   myInput.focus()
+// })
 
