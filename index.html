@@ -12,7 +12,7 @@
 </head>
     
 <body>
-    
+  
   <div class="bg-white-700 p-4 flex justify-between items-center">
     <div class="flex items-center">
       <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/70990824_106523147417553_8336287507264045056_n.jpg?_nc_cat=111&ccb=2&_nc_sid=09cbfe&_nc_ohc=bkfO8OH7-QQAX8Y8XwW&_nc_ht=scontent-iad3-1.xx&oh=61b28c7a33c52a70dcac528878eb099c&oe=601BD2EC" width="50" alt="Logo" class="mr-2">
@@ -24,11 +24,11 @@
     </div>
   </div>
 
-  <div class="md:flex justify-between py-20 px-10 bg-gray-600 text-gray-100">
+  <div class="md:flex justify-between py-20 px-10 bg-gray-800 text-gray-100">
+
     <div class="md:w-1/2 mb-10 md:mb-0">
       <h2 class="text-2xl md:text-4xl lg:text-6xl text-white mb-6">Welcome to <br> Kiss Of Beauty Skincare!</h2>
-      <p class="mb-6">Beauty Products that care! </p>
-      <a href="#footer" class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 hover:bg-gray-300 rounded" id="review-button">Write A Review</a>  
+      <p class="mb-6">Beauty Products that care! </p> 
     </div>
     
     <style>
@@ -41,152 +41,156 @@
       <a href="#section1"></a>
     </div>
   </div>
+  <!--Modal-->
 
-  <button type="button" class="btn btn-primary" data-toggle="modal"   data-target="#exampleModalLong">
-    Launch demo modal
-  </button>
-
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        ...
-      </div>
-
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-        </button>
-
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit Review
-        </button>
-
-        <button type="button" class="btn btn-primary">Delete Review
-        </button>
-
-      </div>
-    </div>
+  
+  
+   
+  <!---Products-->
+  <section id="productsContainer" class= "sm:grid grid-cols-1 gap-2 px-4 bg-white sm:min-h-screen col-span-2 rounded-md shadow">
+  <div class="image center">
+    <a href="#" onClick="showStuff()">
+      <img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:800,h:800"></a>
+      <p class="color names">123</p>
+  </div>
+  <div id="hidden" style="display: none"><p>Here's the hidden text</p> 
   </div>
 
-
-  <div class="md:flex py-16 px-10 bg-black-800 text-black-200 text-center">
+  <div id="BP" class="md:flex py-16 px-10 bg-black-800 text-black-200 text-center">
     <div class="mr-2 text-center">
       <ul class="img-list">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
       </ul>
       <p>Lavish Blossom Cleanser</p>
-           
-      <div class="rate">
-        <input type="radio" id="star5" name="rate" value="5" />
-        <label for="star5" title="text">5 stars</label>
-        <input type="radio" id="star4" name="rate" value="4" />
-        <label for="star4" title="text">4 stars</label>
-        <input type="radio" id="star3" name="rate" value="3" />
-        <label for="star3" title="text">3 stars</label>
-        <input type="radio" id="star2" name="rate" value="2" />
-        <label for="star2" title="text">2 stars</label>
-        <input type="radio" id="star1" name="rate" value="1" />
-        <label for="star1" title="text">1 star</label>
-      </div>
     </div>
-
+    
     <div class="mr-2 text-center">
-      <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Toner.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+      <ul class="img-list">
+      <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Toner.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
       <p>Lavish Blossom Toner</p>
     </div>
 
     <div class="mr-2 text-center">
-      <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Alp-Rose%20Nano%20Serum.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+      <ul class="img-list">
+      <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Alp-Rose%20Nano%20Serum.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
       <p>Alp-Rose Nano Serum</p>
     </div>
 
-    <div class="mr-2 text-center">
-      <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Peptide%20Creme.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+    <div class="mr-2 text-center">      
+      <ul class="img-list">
+      <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Peptide%20Creme.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
       <p>Lavish Peptide Creme</p>
     </div>
 
     <div class="mr-2 text-center">
       <ul class="img-list">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Creamy%20Luffa%20Exfoliant.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Creamy%20Luffa%20Exfoliant.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
       </ul>
-        <p>Creamy Luffa Exfoliant</p>
+      <p>Creamy Luffa Exfoliant</p>
     </div>
 
     <div class="mr-2 text-center">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+        <ul class="img-list">
+        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
         <p>Green Tea Cleanser</p>
     </div>
 
     <div class="mr-2 text-center">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+        <ul class="img-list">
+        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Blossom%20Cleanser.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
         <p>Kaolin Cleanse</p>
     </div>
 
     <div class="mr-2 text-center">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Alp-Rose%20Nano%20Serum.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+        <ul class="img-list">
+        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Alp-Rose%20Nano%20Serum.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
         <p>Halo Eye Serum </p>
     </div>
 
     <div class="mr-2 text-center">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Peptide%20Creme.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
+        <ul class="img-list">
+        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Peptide%20Creme.jpg/:/rs=w:800,h:800" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
         <p>Azi-Clear Serum</p>
-       
-    <div class="mr-2 text-center">
-        <li><a href=""><img src="https://isteam.wsimg.com/ip/800fd409-b2f1-4b2a-bd7e-d17256c258a2/ols/Lavish%20Peptide%20Creme.jpg/:/rs=w:1000,h:1000" class="w-full mb-4 rounded border-solid border-2 border-black-400"></a></li>
-        <p>Azi Clarifying Creme</p>
+    </div>
+  <br>
+  <form class="flex" id= "submit_review_form">
+    <select name="product_id" id="product_choices"> <br>
+    </select> <br>
+    <br>
+  <div class="p-10 bg-indigo-900 text-indigo-400 flex justify-between style=position: absolute; bottom: 0;">
+    <div class="md:w-1/2">
+      <h3 class="w-full ml-8 mt-8 text-black font-bold" id= "review">  Write A Review
+      </h3> 
+      <input list= "product-review-list" type= "text" >
+      <datalist id= "product-review-list">
+        <option value="Lavish Blossom Cleanser"></option>
+        <option value="Lavish Blossom Toner"></option>
+        <option value="Alp-Rose Nano Serum"></option>
+        <option value="Lavish Peptide Creme"></option>
+        <option value="Creamy Luffa Exfoliant"></option>
+        <option value="Green Tea Cleanser"></option>
+        <option value="Kaolin Cleanse"></option>
+        <option value="Halo Eye Serum"></option>
+        <option value="Azi-Clear Serum"></option>
+      </datalist>
+      <textarea class="appearance-none block h-50 w-50 bg-grey-lighter       text-grey-darker border border-grey-darker rounded py-3 px-4 mb-3 ml-8 mt-8" name="review" id="" type="text">
+      </textarea>  
+      <p> 
+        <button type="submit" class="py-4 col-span-10 sm:col-span-4"> Lets Go! </button>        
+      </p>
+    </div>
+  </form>
+
+  <!--Modal-->
+  <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex   items-center justify-center">
+    <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+    
+    <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg  z-50 overflow-y-auto">
+      
+      <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col   items-center mt-4 mr-4 text-white text-sm z-50">
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg"   width="18" height="18" viewBox="0 0 18 18">
+          <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47  1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+        </svg>
+        <span class="modal-close text-sm">(Esc)</span>
+      </div>
+    
+      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      <div class="modal-content py-4 text-left px-6">
+        <!--Title-->
+        <div class="flex justify-between items-center pb-3">
+          <p id="modal-title" class="text-2xl font-bold">Simple Modal!</p>          <div class="modal-close cursor-pointer z-50">
+            <svg class="modal-close fill-current text-black" xmlns="http://www.w3.org/2000/svg"   width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.  47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </div>
+        </div>
+      
+        <!--Body-->
+        <div id="modal-content"></div>
+        <p>Modal content can go here</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+      
+        <!--Footer-->
+        <div class="flex justify-end pt-2">
+          <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500   hover:bg-gray-100 hover:text-indigo-400 mr-2">Action</button>
+          <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white   hover:bg-indigo-400">Close</button>
+        </div>
+        
+      </div>
     </div>
   </div>
+  </section>
 
   
-      <form class="flex" id= "submit_review_form">
-        <div class="p-10 bg-indigo-900 text-indigo-400 flex justify-between style=position: absolute; bottom: 0;">
-          <div class="md:w-1/2">
-            <h3 class="w-full ml-8 mt-8 text-black font-bold" id= "review">  Write A Review
-            </h3> 
-            <input list= "product-review-list" type= "text" >
-            <datalist id= "product-review-list">
-              <option value="Lavish Blossom Cleanser"></option>
-              <option value="Lavish Blossom Toner"></option>
-              <option value="Alp-Rose Nano Serum"></option>
-              <option value="Lavish Peptide Creme"></option>
-              <option value="Creamy Luffa Exfoliant"></option>
-              <option value="Green Tea Cleanser"></option>
-              <option value="Kaolin Cleanse"></option>
-              <option value="Halo Eye Serum"></option>
-              <option value="Azi-Clear Serum"></option>
-              <option value="Azi Clarifying Creme"></option>
-            </datalist>
-            <textarea class="appearance-none block h-20 w-20 bg-grey-lighter       text-grey-darker border border-grey-darker rounded py-3 px-4 mb-3 ml-8 mt-8" name="review" id="" type="text">
-            </textarea>  
-            <p> 
-              <button type="submit" class="py-4 col-span-10 sm:col-span-4"> Lets Go! </button>        
-            </p>
-          </div>
-        </div>  
-      </form>
 
-      <script>
-        let form = document.getElementById("submit_review_form");
-        form.onsubmit = function(e) {
-          e.preventDefault();
-          let result = document.getElementById("result");
-          result.innerHTML = "Thanks for your review!...Not hahah " + form.reviewvalue;
-          form.reset();
-        };
-        // function myFunction() {
-        //   alert("The form was submitted");
-        // }
-      </script>
-    </div>
-  </div>
+
+  <!--Form -->
+
+  
+  
   <div class="flex items-center">
     Copyright &copy; Doggos 2020 - Infinity
   </div>
