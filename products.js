@@ -93,19 +93,7 @@ class Product {
                 product_id: this.id
             }
             
-            console.log(reviewCommentValue)
-
-            fetch("http://localhost:3000/reviews", {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",  
-            },
-            body: JSON.stringify(review)
-            })
-            .then(res => (res.json()))
-            .then(review => (console.log(review)))
-            .catch(error => console.log("Error: " + error))    
+            Review.create(review) 
         }); 
 
         this.editLink ||= document.createElement('a');
@@ -120,6 +108,21 @@ class Product {
         return this.element; 
     }
 
+
+
+
+    
+     //fetch("http://localhost:3000/reviews", {
+            //method: "POST",
+            //headers: {
+            //    "Accept": "application/json",
+            //    "Content-Type": "application/json",  
+            //},
+            //body: JSON.stringify(review)
+            //})
+            //.then(res => (res.json()))
+            //.then(review => (console.log(review)))
+            //.catch(error => console.log("Error: " + error))   
     //modalContent() {
     //    this.modal ||= document.createElement('div');
     //    this.productDescription ||= document.createElement('a');
