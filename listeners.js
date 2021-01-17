@@ -1,35 +1,41 @@
 document.addEventListener('DOMContentLoaded', function(e) {
     Product.all();
-    Modal.init();
+   
 });
 
-document.addEventListener('click', function(e) {
-    let target = e.target;
-    if(target.matches('#BP')) {
-        e.preventDefault
 
-    } else if(target.matches(".reviewModal")) {
-        let review = Review.findById(target.dataset.reviewId);
-        Modal.populate({title: `${product.name}`, content: product.modalContent()})
-        Modal.toggle()    
-    } else if(target.matches(".modal-close") || target.matches(".modal-overlay")) {
-        e.preventDefault();
-        Modal.toggle();
-    } 
-});
 
-document.addEventListener('keydown', function(evt) {
-    evt = evt || window.event
-    var isEscape = false
-    if ("key" in evt) {
-      isEscape = (evt.key === "Escape" || evt.key === "Esc")
-    } else {
-      isEscape = (evt.keyCode === 27)
-    }
-    if (isEscape && document.body.classList.contains('modal-active')) {
-      Modal.toggle()
-    }
-});
+
+
+
+
+//document.addEventListener('click', function(e) {
+//    let target = e.target;
+//    if(target.matches('#BP')) {
+//        e.preventDefault
+//
+//    } else if(target.matches(".reviewModal")) {
+//        let review = Review.findById(target.dataset.reviewId);
+//        Modal.populate({title: `${product.name}`, content: product.modalContent()})
+//        Modal.toggle()    
+//    } else if(target.matches(".modal-close") || target.matches(".modal-overlay")) {
+//        e.preventDefault();
+//        Modal.toggle();
+//    } 
+//});
+//
+//document.addEventListener('keydown', function(evt) {
+//    evt = evt || window.event
+//    var isEscape = false
+//    if ("key" in evt) {
+//      isEscape = (evt.key === "Escape" || evt.key === "Esc")
+//    } else {
+//      isEscape = (evt.keyCode === 27)
+//    }
+//    if (isEscape && document.body.classList.contains('modal-active')) {
+//      Modal.toggle()
+//    }
+//});
 
 //document.addEventListener('submit', function(e){
 //    let target = e.target;
