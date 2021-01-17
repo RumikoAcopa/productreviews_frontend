@@ -5,37 +5,17 @@ body {
 
 body {
   font: 600 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-      background-image: #faf8fb;
+      background-image: #8f27c4;
   color: black
 }
 
-a {
-  color: inherit;
+li {
+  align-items: bottom;
 }
 
-.container {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+a{
+  align-items: bottom;
 
-.modal-window div:not(:last-of-type) {
-  margin-bottom: 15px;
-}
-
-small {
-  color: #aaa;
-}
-
-.btn {
-  background-color: rgb(111, 178, 209);
-  padding: 1em 1.5em;
-  border-radius: 3px;
-  text-decoration: none;
-  i {
-    padding-right: 0.3em;
-  }
 }
 
 
