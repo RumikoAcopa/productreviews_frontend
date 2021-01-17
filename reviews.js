@@ -33,14 +33,14 @@ class Review {
       })
   }
   
-  static create(formData) {
+  static create(review) {
     return fetch("http://localhost:3000/reviews", {
     method: "POST",
     headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"
     },
-    body: JSON.stringify({review: formData})
+    body: JSON.stringify(review)
     })
     .then(res => {
       if(res.ok) {
@@ -50,72 +50,20 @@ class Review {
         }
       })
       .then(reviewAttributes => {
-        let review = new Review(reviewAttributes);
-        this.collection.push(review);
-        this.container.appendChild(review.render())
-        return review;
-  
+        
+      this.reviewAttributes;
+      
       });
   }
 
-  function setToken(token) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('lastLoginTime', new Date(Date.now()).getTime())
-  }
-
-  function getToken() {
-    let now = new Date(Date.now()).getTime();
-    let thirtyMinutes = 1000 * 60 * 30;
-    let timeSinceLastLogin = now - localStorage.getItem('lastLoginTime');
-    if (timeSinceLastLogin < thirtyMinutes) {
-      return localStorage.getItem('token');
-    }
-  }
-
-  fetch('http://localhost:3000/login', {
-    method: 'post', 
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({"user": {
-    "email" : "test@test.com",
-    "password" : "password"
-    }})
-  })
-
-  .then(res => {
-    if(res.ok) {
-      setToken(res.headers.get('Authorization'))
-      return res.json()
-    } else {
-      return res.text().then(text => Promise.reject(text));
-    }
-  })
-  .then(json => console.dir(json))
-  .catch(err => console.error(err))
-
-  //Then wait 30 minutes and do this:
-
-  fetch('http://localhost:3000/private/test', {
-    headers: {
-      'Content-Type': 'application/json', 
-    }
-  })
-    .then(res => {
-      if(res.ok) {
-        return res.json() //rtns a promise 4 body content
-      } else if (res.status == "401") {
-        return res.text().then(text => Promise.reject(text))
-      }
-    })
-    .then(json => console.dir(json))
-    .catch(err => console.error(err))
-
+  
 
   render() {
     
     const reviewContainer = document.querySelector('#review-container')
-    //render reviews in reviewContainer
+    //this.reviewsDiv =document.createElement("div")
+    //this.reviewsDiv.class = "product-reviews-list"
+    //this.reviewsDiv.id = `product-reviews-list-${this.id}`;
   }
 
   //static showStuff() {
