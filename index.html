@@ -1,81 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Reviews</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Star rating using pure CSS</title> 
-</head>
-<!--   left side -->
+<!-- header ==============================  -->
 <body>
-  
-  <div class="bg-white-700 p-4 flex justify-between items-center">
+  <head>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css "rel="stylesheet" >
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Reviews</title>
+      <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <div class="bg-ligth-gray-700 p-4 flex justify-between items-center">
     <div class="flex items-center">
       <img src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/70990824_106523147417553_8336287507264045056_n.jpg?_nc_cat=111&ccb=2&_nc_sid=09cbfe&_nc_ohc=bkfO8OH7-QQAX8Y8XwW&_nc_ht=scontent-iad3-1.xx&oh=61b28c7a33c52a70dcac528878eb099c&oe=601BD2EC" width="50" alt="Logo" class="mr-2">
     </div>
-      <!--   right side -->
-    <div class="hidden md:block">
-      <a href="#" class="inline-block p-2 text-navy-200 hover:text-navy-100 mr-2">Login</a>
-      <a href="#" class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 hover:bg-gray-300 rounded">Sign Up</a>
-    </div>
   </div>
 
-  <div class="md:flex justify-between py-20 px-10 bg-gray-800 text-gray-100">
+  <!-- hero ============================== -->
+  <div class="md:flex justify-between py-20 px-10 bg-gray-800 text-gray-100"></div>
 
-    <div class="md:w-1/2 mb-10 md:mb-0">
-      <h2 class="text-2xl md:text-4xl lg:text-6xl text-white mb-6">Welcome to <br> Kiss Of Beauty Skincare!</h2>
-      <p class="mb-6">Beauty Products that care! </p> 
-    </div>
-    
-    <style>
-      html {
-        scroll-behavior: smooth;
-      } 
-    </style>
-  
-    <div class="main" id="section1">
-      <a href="#section1"></a>
-    </div>
+  <!--   left -->
+  <div class="md:w-1/2 mb-10 md:mb-0">
+    <h2 class="text-2xl md:text-4xl lg:text-6xl text-gray mb-6">Welcome to <br> Kiss Of Beauty Skincare!</h2>
+    <p class="mb-6">Beauty Products that care! </p> 
   </div>
 
-  
-  
-   
-  <!-- products ============================== -->
+  <!--   right -->
+ 
+ 
+
+  <!-- features ============================== -->
   <div class="container mr-2 text-center" id="products-list" >  
+ 
+  </div>
+  <div id="reviews-container" class="px-4 bg-blue-100 md:col-start-3 sm:min-h-screen rounded-md shadow">
+  <h1 class="text-2xl semibold border-b-4 border-blue">Reviews</h1>
+  </div> 
+
+  <!-- footer + newsletter ============================== -->
 
 
-    
+  <!--   left -->
+ 
+
+  <!--   right -->
+  
+  <!--<script type="text/javascript" src="js/utilities.js"></script>-->
+
+  <script src="products.js"></script>
+  <script src="listeners.js"></script>
+  <script src="reviews.js"></script>
   </div>
 
-
-  <!-- products ============================== -->
-  <div class="reviewsContainer mr-2 text-center" id="reviews-container"
-   >  
-  </div>
-  
-  <!--Footer-->
-  
-  
-
-  
-
-
-  <!--Form -->
-
-  
-  
-  <div class="flex items-center">
-    Copyright &copy; Doggos 2020 - Infinity
-  </div>
- <!--<script type="text/javascript" src="js/utilities.js"></script>-->
- <script src="products.js"></script>
- <script src="listeners.js"></script>
- <script src="reviews.js"></script>
-
+<!--   left side -->
 </body>
 </html>
