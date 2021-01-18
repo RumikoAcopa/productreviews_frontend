@@ -1,36 +1,42 @@
 class Review {
 
   constructor(attributes) {
-      let whitelist = ["id", "name", "user_id", "product_id", "comment"]
+      let whitelist = ["id", "user_id", "product_id", "comment"]
       whitelist.forEach(attr => this[attr] = attributes[attr])
   }
 
-  static container() {
-      return this.c ||= document.querySelector("#product-reviews-list")
-  }; //append things here w/element
+  //static container() {
+  //    return this.c ||= document.querySelector("#product-reviews-list")
+  //}; //append things here w/element
   
-  static all() {
+  static all(){
       return fetch("http://localhost:3000/reviews", {
           headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json"
+            "Accept": "application/json",
+            "Content-Type": "application/json"
           }
       })
   
       .then(res => {
-          if(res.ok) {
-              return res.json() //rtns a promise 4 body content parsed as JSON
-          } else {  //else,rtn a reject promise so skip following then & go 2 catch
-              return res.text().then(error => Promise.reject(error))
-          }
+        if(res.ok) {
+            return res.json() //rtns a promise 4 body content parsed as JSON
+        } else {  //else,rtn a reject promise so skip following then & go 2 catch
+            return res.text().then(error => Promise.reject(error))
+        }
       })
-  
-      .then(reviewArray => {
-          this.collection = reviewArray.map(attrs => new Review(attrs))
-          let renderedLists = this.collection.map(reviewList => reviewList.render())
-          this.container().append(...renderedLists);
-          return this.collection
+      
+      .then(reviewObjects => {
+        this.collection = reviewObjects.map(reviewAttributes => new Review(reviewAttributes))
+        let reviews = this.collection.map(review => review.display())
+        //this.reviews.map(review => review.render())
+        return this.collection
       })
+      //.then(reviewArray => {
+      //  this.collection = reviewArray.map(attrs => new Review(attrs))
+      //  let renderedLists = this.collection.map(review => review.render())
+      //  this.container().append(...renderedLists);
+      //  return this.collection
+      //})
   }
   
   static create(review) {
@@ -48,23 +54,38 @@ class Review {
       } else {  //else,rtn a reject promise so skip following then &go 2 catch
             return res.text().then(error => Promise.reject(error))
         }
-      })
-      .then(reviewAttributes => {
-        
-      this.reviewAttributes;
-      
-      });
+    })
+
+    .then(reviewAttributes => { 
+ 
+      const newReview = new Review(reviewAttributes);
+      this.all().push(newReview);
+      newReview.display();
+    });
+    
   }
 
   
-
-  render() {
-    
-    const reviewContainer = document.querySelector('#review-container')
-    //this.reviewsDiv =document.createElement("div")
-    //this.reviewsDiv.class = "product-reviews-list"
-    //this.reviewsDiv.id = `product-reviews-list-${this.id}`;
+  display(){
+    this.title = document.createElement("p")
+    this.title.textContent = this.comment
+    this.title.id = this.id
+    document.getElementById("reviews-container").appendChild(this.title)
   }
+
+}
+
+    //static render(newReview) {
+  //  const reviewContainer = document.getElementById('#reviews-container')
+  //  const reviewDiv = document.createElement("div")
+  //  //reviewDiv.textContent = this.comment
+  //  const review = document.createElement("h3")
+  //  review.innerText = newReview.comment
+  //  //this.reviewDiv.id = this.id
+  //  reviewDiv.append(review)
+  //  document.getElementById("reviews-container").appendChild(this.reviewDiv)
+  //  //document.querySelector("#reviews-container").push(this.reviewDiv)
+  //}
 
   //static showStuff() {
   //    let img = new Image();
@@ -84,4 +105,3 @@ class Review {
       //need render
       //need to build form data - refer to repo utilities.js file later branches(videos)
 
-}
