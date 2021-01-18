@@ -9,6 +9,10 @@ class Product {
         //css selector would go here for products container where it's holding the products
     }
 
+    //static nameContainer() {
+    //    return this.c ||= document.querySelector("#name-container")
+    //}
+
     static all() {
         return fetch("http://localhost:3000/products", {
             headers: {
@@ -42,26 +46,33 @@ class Product {
         this.reviewsDiv.class = "product-reviews-list"
         this.reviewsDiv.id = `product-reviews-list-${this.id}`;
 
-        const productsUl = document.createElement('ul')
-        productsUl.className = "products-ul"
-        productsUl.id = "products-ul"
-        productsDiv.appendChild(productsUl)
+        //const productsName = document.querySelector("name-container")
+        //const nameDiv = document.createElement('div')
+        //nameDiv.className = "name-div"
+        //nameDiv.id = "name-div"
+        //productsName.appendChild(nameDiv)
 
-        this.element ||= document.createElement('li');
-        this.element.classList.add(..."bg-white-700 p-4 flex justify-between items-center".split(" "));
+        const productsBody = document.createElement('body')
+        productsBody.className = "products-body align-center"
+        productsBody.id = "products-body"
+        productsDiv.appendChild(productsBody)
+
+        this.element ||= document.createElement('div');
+        this.element.classList.add(..."w-1/4 mb-4 text-align-center".split(" "));
 
         this.nameLink ||= document.createElement('a');
-        this.nameLink.class="md:flex py-16 px-10 bg-black-800 text-black-200 text-center"
+        this.nameLink.class="md:flex py-16 px-10 bg-black-800 text-black-400 text-center"
         this.nameLink.textContent = this.name;
+
         //this.nameLink.dataset.productId=this.id;
         //this.nameLink.innerHTML = `<i class="reviewModal" data-product-id="${this.id}">${this.name}</i>`;
 
-        this.descriptionLink ||= document.createElement('a');
-        this.descriptionLink.class="md:flex py-8 px-8 bg-black-800 text-black-200 text-bottom"
+        this.descriptionLink ||= document.createElement('p');
+        this.descriptionLink.class="mr-2 mt-8 text-bold-right"
         this.descriptionLink.textContent = this.description;
 
         this.imageLink ||= document.createElement('img');
-        this.imageLink.class="md:flex py-8 px-8 bg-black-800 text-black-200 text-center"
+        this.imageLink.class="sm:flex py-4 px-4 bg-black-800 text-black-200 text-center"
         this.imageLink.src = this.image_url;
 
         this.newReviewFormLink ||= document.createElement('form');
@@ -80,7 +91,7 @@ class Product {
         this.newReviewFormLink.appendChild(this.newReviewComment);
 
         this.newReviewButton ||= document.createElement('button');
-        this.newReviewButton.class= "new-review-button";
+        this.newReviewButton.class= "new-review-button color-blue";
         this.newReviewButton.id = `new-review-button-${this.id}`;
         this.newReviewButton.innerHTML = "Submit";
         this.newReviewFormLink.appendChild(this.newReviewButton);
@@ -91,8 +102,7 @@ class Product {
             const review = {
                 comment: reviewCommentValue,
                 product_id: this.id
-            }
-            
+            }           
             Review.create(review) 
         }); 
 
@@ -111,7 +121,7 @@ class Product {
 
 
 
-    
+
      //fetch("http://localhost:3000/reviews", {
             //method: "POST",
             //headers: {
