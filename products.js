@@ -32,6 +32,7 @@ class Product {
           return this.collection
           })
   }
+  
       
   render() {
       const productsDiv = document.querySelector("#products-list")
@@ -60,7 +61,7 @@ class Product {
       this.nameLink ||= document.createElement('a');
       this.nameLink.class="md:flex py-16 px-10 bg-black-800 text-black-400 text-center";
       this.nameLink.style.fontWeight="bolder";
-      this.nameLink.style.fontSize="Large";
+      this.nameLink.style.fontSize="XX-Large";
       this.nameLink.textContent = this.name;
 
       //this.nameLink.dataset.productId=this.id;
@@ -68,6 +69,7 @@ class Product {
 
       this.descriptionLink ||= document.createElement('p');
       this.descriptionLink.class="mr-2 mt-8 text-bold-right"
+      this.descriptionLink.style.textAlign="list-style-position: outside;"
       this.descriptionLink.textContent = this.description;
 
       this.imageLink ||= document.createElement('img');
@@ -85,9 +87,9 @@ class Product {
       this.newReviewFormLink.appendChild(this.commentLabel);
 
       this.newReviewComment ||= document.createElement('textarea');
-      this.newReviewComment.class="new-review-comment"; 
+      this.newReviewComment.class="new-review-comment blinking-cursor"; 
       this.newReviewComment.style="border:solid 1px orange;";
-      this.newReviewComment.style.cursor= "alias";
+      this.newReviewComment.style.cursor= "autofocus";
       this.newReviewComment.id = `new-review-comment-${this.id}`;
       this.newReviewFormLink.appendChild(this.newReviewComment);
 

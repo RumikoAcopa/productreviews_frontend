@@ -5,8 +5,45 @@
 .column {
   flex: 50%;
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+div ul li {
+  line-height: 60px;
+}    
+p{
+  float: center;
+}
 
 
+.new-review-comment .blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+ 
+
+img {
+  display:block;  
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 2px;
+}
+
+
+/*.container {
+/*  display: grid;
+/*  grid-template-columns: repeat(3, 1fr);
+/*  gap: 10px;
+/*}
 /*.headingTitle {
 /*  color: white;
 /*  background-color: #454545;
