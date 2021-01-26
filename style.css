@@ -1,41 +1,33 @@
-body{
-  background-color: rgb(93, 113, 126);
+.row {
+  display: flex;
 }
 
-text{
-  color: white;
-}
-li {
-  padding-top: 0;
-  margin-top: auto;
+.column {
+  flex: 50%;
 }
 
-a {
-  position: 0;
-  align-content: space-between
-}
 
-.new-review-button {
-  color:cadetblue;
-}
-
-.img{
-  margin: auto;
-  width: 50%;
-  height: 50%;
-   margin-top: 200px;
-   margin-left: 10px;
-   padding: 25px;
-   width: 200px;}
-}
-
-.textarea {
-  border-color: darkblue;
-}
-
-p{
-  text-align: center
-}
-
+/*.headingTitle {
+/*  color: white;
+/*  background-color: #454545;
+/*  padding-top: 30px;
+/*  padding-right: 30px;
+/*  padding-bottom: 30px;
+/*  padding-left: 30px;
+/*  text-align: center;
+/*  height: 100px;
+/*  font-family: "Futura", Times, serif;
+/*}
+/*
+/*.btn {
+/*  background-color: #951223;
+/*  border: #454545;
+/*  color: white;
+/*}
+/*h1 {
+/*  text-align: center;
+/*}
+*/
+  
 
 
