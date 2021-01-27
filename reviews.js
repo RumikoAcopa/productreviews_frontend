@@ -22,9 +22,11 @@ class Review {
     })
       
     .then(reviewObjects => {
-      this.collection = reviewObjects.map(reviewAttributes => new Review(reviewAttributes))
-      let reviews = this.collection.map(review => review.display())
-      return this.collection
+        reviewObjects.forEach(reviewAttributes => {
+          const newReview = new Review(reviewAttributes)
+          Product.findById(newReview.product_id).reviews.push(newReview)
+          newReview.display();
+      })
     })
   }
   
@@ -48,7 +50,7 @@ class Review {
     .then(reviewAttributes => { 
  
       const newReview = new Review(reviewAttributes);
-      this.all().push(newReview);
+      this.collection.push(newReview);
       newReview.display();
     });
     
@@ -56,10 +58,11 @@ class Review {
 
   
   display(){
+    this.reviewDiv = document.getElementById(`product-reviews-list-${this.product_id}`)
     this.title = document.createElement("p")
     this.title.textContent = this.comment
     this.title.id = this.id
-    document.getElementById("reviews-container").appendChild(this.title)
+    this.reviewDiv.appendChild(this.title)
   }
 
 }
