@@ -16,27 +16,29 @@ class Product {
   }
 
   static all() {
-      return fetch("http://localhost:3000/products", {
-          headers: {
-              "Accept": "application/json",
-              "Content-Type": "application/json"
+    return fetch("http://localhost:3000/products", {
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+    
+    .then(res => {
+      if(res.ok) {
+          return res.json() 
+          } else {
+          return res.text().then(error => Promise.reject(error)) 
           }
-      })
-      
-      .then(res => {
-          if(res.ok) {
-              return res.json() 
-              } else {
-              return res.text().then(error => Promise.reject(error)) 
-              }
-          }) 
-          .then(productArray => { 
-          this.collection = productArray.map(attrs => new Product(attrs))
-          let renderedProducts = this.collection.map(product => product.render()) 
-          this.container().append(...renderedProducts);
-          return this.collection
-          })
+    }) 
+
+    .then(productArray => { 
+      this.collection = productArray.map(attrs => new Product(attrs))
+      let renderedProducts = this.collection.map(product => product.render()) 
+      this.container().append(...renderedProducts);
+      return this.collection
+    })
   }
+
 
 
   
