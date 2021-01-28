@@ -1,14 +1,14 @@
 class Product {
   constructor (attributes) {
-      let whitelist = ["id", "name", "description", "image_url"]
-      whitelist.forEach(attr => this[attr] = attributes[attr])
-      allProducts.push(this)
-      this.reviews = [];
+    let whitelist = ["id", "name", "description", "image_url"]
+    whitelist.forEach(attr => this[attr] = attributes[attr])
+    allProducts.push(this)
+    this.reviews = [];
   }
 
   static container() {
-      return this.c ||= document.querySelector("#products-list") 
-      //css selector would go here for products container where it's holding the products
+    return this.c ||= document.querySelector("#products-list") 
+      
   }
 
   static findById(id) {
@@ -18,17 +18,17 @@ class Product {
   static all() {
     return fetch("http://localhost:3000/products", {
         headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
+        "Accept": "application/json",
+        "Content-Type": "application/json"
         }
     })
     
     .then(res => {
       if(res.ok) {
-          return res.json() 
-          } else {
-          return res.text().then(error => Promise.reject(error)) 
-          }
+        return res.json() 
+        } else {
+        return res.text().then(error => Promise.reject(error)) 
+        }
     }) 
 
     .then(productArray => { 
@@ -38,12 +38,8 @@ class Product {
       return this.collection
     })
   }
-
-
-
-  
       
-  render() {
+    render() {
       const productsDiv = document.querySelector("#products-list")
       const reviewsDiv =document.createElement("div")
       reviewsDiv.class = "product-reviews-list"
@@ -98,11 +94,10 @@ class Product {
       this.newReviewButton ||= document.createElement('button');
       this.newReviewButton.class= "new-review-button color-blue-800";
       this.newReviewButton.id = `new-review-button-${this.id}`;
-      //this.newReviewButton.innerHTML = "Start typing Review Above";
       this.newReviewForm.appendChild(this.newReviewButton);
 
       this.element.append(this.nameLink, this.imageLink, this.descriptionLink, this.newReviewForm, reviewsDiv); 
       
       return this.element; 
-  }
+    }
 }
