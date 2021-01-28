@@ -1,8 +1,8 @@
 class Review {
 
   constructor(attributes) {
-      let whitelist = ["id", "user_id", "product_id", "comment"]
-      whitelist.forEach(attr => this[attr] = attributes[attr])
+    let whitelist = ["id", "user_id", "product_id", "comment"]
+    whitelist.forEach(attr => this[attr] = attributes[attr])
   }
 
   static all(){
@@ -15,17 +15,17 @@ class Review {
 
     .then(res => {
       if(res.ok) {
-          return res.json() 
+        return res.json() 
       } else {  
-          return res.text().then(error => Promise.reject(error))
+        return res.text().then(error => Promise.reject(error))
       }
     })
       
     .then(reviewObjects => {
         reviewObjects.forEach(reviewAttributes => {
-          const newReview = new Review(reviewAttributes)
-          Product.findById(newReview.product_id).reviews.push(newReview)
-          newReview.display();
+        const newReview = new Review(reviewAttributes)
+        Product.findById(newReview.product_id).reviews.push(newReview)
+        newReview.display();
       })
     })
   }
@@ -34,16 +34,16 @@ class Review {
     return fetch("http://localhost:3000/reviews", {
     method: "POST",
     headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
+      "Accept": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify(review)
     })
     .then(res => {
       if(res.ok) {
-          return res.json() 
+        return res.json() 
       } else {  
-          return res.text().then(error => Promise.reject(error))
+        return res.text().then(error => Promise.reject(error))
       }
     })
 
