@@ -50,7 +50,7 @@ class Review {
     .then(reviewAttributes => { 
  
       const newReview = new Review(reviewAttributes);
-      this.collection.push(newReview);
+      Product.findById(newReview.product_id).reviews.push(newReview)
       newReview.display();
     });
     
