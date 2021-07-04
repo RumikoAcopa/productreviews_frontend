@@ -107,7 +107,7 @@ class Product {
     this.newReviewButton ||= document.createElement("button");
     this.newReviewButton.class = "new-review-button color-blue-800";
     this.newReviewButton.id = `new-review-button-${this.id}`;
-    this.newReviewButton.innerHTML = "Start typing Review Above";
+    this.newReviewButton.innerHTML = "Leave your review";
     this.newReviewForm.appendChild(this.newReviewButton);
 
     this.element.append(
