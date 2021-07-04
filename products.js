@@ -99,7 +99,7 @@ class Product {
 
     this.newReviewComment ||= document.createElement("textarea");
     this.newReviewComment.class = "new-review-comment";
-    this.newReviewComment.style = "border:solid 1px orange;";
+    this.newReviewComment.style = "border:solid 1px grey;";
     this.newReviewComment.focus();
     this.newReviewComment.name = "comment";
     this.newReviewForm.appendChild(this.newReviewComment);
